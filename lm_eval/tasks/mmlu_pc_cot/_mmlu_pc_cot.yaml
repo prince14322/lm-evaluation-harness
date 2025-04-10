@@ -3,4 +3,4 @@ task:
 - mmlu_pc_cot_stem
 - mmlu_pc_cot_other
 - mmlu_pc_cot_social_sciences
-- mmlu_pc_cot_humanities
+# - mmlu_pc_cot_humanities
