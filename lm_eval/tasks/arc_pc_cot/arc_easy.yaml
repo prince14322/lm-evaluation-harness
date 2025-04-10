@@ -13,6 +13,7 @@ doc_to_decontamination_query: "query"
 output_type: generate_until
 process_results: !function utils.process_results_gen
 generation_kwargs:
+  max_gen_toks: 4096
   until:
     - "</s>"
     - "<|end_of_text|>"
