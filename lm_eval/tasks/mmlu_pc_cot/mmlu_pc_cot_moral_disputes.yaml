@@ -1,6 +1,0 @@
-"dataset_name": "moral_disputes"
-"description": ""
-"group": "mmlu_pc_cot_humanities"
-"include": "_default_template_yaml"
-"task": "mmlu_pc_cot_moral_disputes"
-"task_alias": "moral disputes"

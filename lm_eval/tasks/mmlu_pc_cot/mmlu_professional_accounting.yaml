@@ -1,6 +1,0 @@
-"dataset_name": "professional_accounting"
-"description": ""
-"group": "mmlu_pc_cot_other"
-"include": "_default_template_yaml"
-"task": "mmlu_pc_cot_professional_accounting"
-"task_alias": "professional accounting"

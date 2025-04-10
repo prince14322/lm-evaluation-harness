@@ -1,6 +1,0 @@
-"dataset_name": "high_school_computer_science"
-"description": ""
-"group": "mmlu_pc_cot_stem"
-"include": "_default_template_yaml"
-"task": "mmlu_pc_cot_high_school_computer_science"
-"task_alias": "high school computer science"

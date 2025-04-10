@@ -1,6 +1,0 @@
-"dataset_name": "machine_learning"
-"description": ""
-"group": "mmlu_pc_cot_stem"
-"include": "_default_template_yaml"
-"task": "mmlu_pc_cot_machine_learning"
-"task_alias": "machine learning"

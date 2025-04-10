@@ -1,6 +1,0 @@
-"dataset_name": "high_school_geography"
-"description": ""
-"group": "mmlu_pc_cot_social_sciences"
-"include": "_default_template_yaml"
-"task": "mmlu_pc_cot_high_school_geography"
-"task_alias": "high school geography"

@@ -1,6 +1,0 @@
-"dataset_name": "clinical_knowledge"
-"description": ""
-"group": "mmlu_pc_cot_other"
-"include": "_default_template_yaml"
-"task": "mmlu_pc_cot_clinical_knowledge"
-"task_alias": "clinical knowledge"
