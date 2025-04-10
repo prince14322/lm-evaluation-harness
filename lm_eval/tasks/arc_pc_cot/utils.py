@@ -1,3 +1,5 @@
+import re
+
 def doc_to_text(doc):
     option_labels = ""
     
