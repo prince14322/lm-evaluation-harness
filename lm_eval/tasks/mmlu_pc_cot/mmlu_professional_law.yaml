@@ -1,0 +1,6 @@
+"dataset_name": "professional_law"
+"description": ""
+"group": "mmlu_pc_cot_humanities"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_professional_law"
+"task_alias": "professional law"

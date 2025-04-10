@@ -1,0 +1,6 @@
+"dataset_name": "public_relations"
+"description": ""
+"group": "mmlu_pc_cot_social_sciences"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_public_relations"
+"task_alias": "public relations"

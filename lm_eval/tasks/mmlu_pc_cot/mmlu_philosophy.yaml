@@ -1,0 +1,6 @@
+"dataset_name": "philosophy"
+"description": ""
+"group": "mmlu_pc_cot_humanities"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_philosophy"
+"task_alias": "philosophy"

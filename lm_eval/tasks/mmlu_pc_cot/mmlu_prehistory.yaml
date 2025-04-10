@@ -1,0 +1,6 @@
+"dataset_name": "prehistory"
+"description": ""
+"group": "mmlu_pc_cot_humanities"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_prehistory"
+"task_alias": "prehistory"

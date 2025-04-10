@@ -1,0 +1,6 @@
+"dataset_name": "high_school_macroeconomics"
+"description": ""
+"group": "mmlu_pc_cot_social_sciences"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_high_school_macroeconomics"
+"task_alias": "high school macroeconomics"

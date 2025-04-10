@@ -1,0 +1,6 @@
+"dataset_name": "computer_security"
+"description": ""
+"group": "mmlu_pc_cot_stem"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_computer_security"
+"task_alias": "computer security"

@@ -1,0 +1,6 @@
+"dataset_name": "professional_medicine"
+"description": ""
+"group": "mmlu_pc_cot_other"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_professional_medicine"
+"task_alias": "professional medicine"

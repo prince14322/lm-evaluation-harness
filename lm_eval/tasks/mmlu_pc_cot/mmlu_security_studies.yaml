@@ -1,0 +1,6 @@
+"dataset_name": "security_studies"
+"description": ""
+"group": "mmlu_pc_cot_social_sciences"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_security_studies"
+"task_alias": "security studies"

@@ -1,0 +1,6 @@
+"dataset_name": "marketing"
+"description": ""
+"group": "mmlu_pc_cot_other"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_marketing"
+"task_alias": "marketing"

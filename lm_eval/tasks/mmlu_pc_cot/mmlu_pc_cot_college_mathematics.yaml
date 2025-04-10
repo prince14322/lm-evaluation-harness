@@ -1,0 +1,6 @@
+"dataset_name": "college_mathematics"
+"description": ""
+"group": "mmlu_pc_cot_stem"
+"include": "_default_template_yaml"
+"task": "mmlu_pc_cot_college_mathematics"
+"task_alias": "college mathematics"
