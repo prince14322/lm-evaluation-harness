@@ -1,0 +1,27 @@
+task: hellaswag_pc_cot
+dataset_path: hellaswag
+dataset_name: null
+training_split: train
+validation_split: validation
+test_split: null
+process_docs: !function utils.process_docs
+doc_to_text: "Given a partial sentence and four options 0, 1, 2, and 3. Generate the option number corresponding to the correct ending.\nSentence: {{query}}\nOptions:\n0. {{choices[0]}}\n1. {{choices[1]}}\n2. {{choices[2]}}\n3. {{choices[3]}}\nGenerate pseudocode chain-of-thought reasoning first and then generate the solution."
+doc_to_target: "{{['0', '1', '2', '3'][gold]}}"
+output_type: generate_until
+generation_kwargs:
+  max_gen_toks: 4096
+  until:
+    - "</s>"
+    - "<|end_of_text|>"
+    - "<|im_end|>"
+process_results: !function utils.process_results_gen
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: true
+metadata:
+  version: 1.0
+dataset_kwargs:
+  trust_remote_code: true
