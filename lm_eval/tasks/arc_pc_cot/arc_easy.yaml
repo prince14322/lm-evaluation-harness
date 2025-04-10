@@ -1,6 +1,6 @@
 group:
   - ai2_arc
-task: arc_easy_generate
+task: arc_pc_cot
 dataset_path: allenai/ai2_arc
 dataset_name: ARC-Easy
 training_split: train
