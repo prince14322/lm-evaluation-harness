@@ -29,7 +29,7 @@ def doc_to_text(doc):
     prompt += "Options:\n"
     for i, opt in enumerate(options):
         prompt += "{}. {}\n".format(choices[i], opt)
-        prompt += "\nGenerate pseudocode chain-of-thought reasoning first and then generate the solution."
+    prompt += "\nGenerate pseudocode chain-of-thought reasoning first and then generate the solution."
     return prompt
 
 def process_docs(dataset, subject):
