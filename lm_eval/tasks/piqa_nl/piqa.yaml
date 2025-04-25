@@ -1,0 +1,28 @@
+task: piqa_nl
+dataset_path: baber/piqa
+dataset_name: null
+training_split: train
+validation_split: validation
+test_split: null
+doc_to_text: "Given a question with two possible options 0 and 1. Generate either 0 or 1 which answers the question.\nQuestion: {{goal}}\nOptions:\n0. {{sol1}}\n1. {{sol2}}\nThink step by step and in the end, finish your response with 'Response:$RESPONSE' where $RESPONSE (without quotes) is the final output expected."
+doc_to_target: label
+should_decontaminate: true
+doc_to_decontamination_query: goal
+output_type: generate_until
+generation_kwargs:
+  max_gen_toks: 4096
+  until:
+    - "</s>"
+    - "<|end_of_text|>"
+    - "<|im_end|>"
+process_results: !function utils.process_results_gen
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: true
+metadata:
+  version: 1.0
+dataset_kwargs:
+  trust_remote_code: true

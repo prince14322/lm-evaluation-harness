@@ -1,0 +1,33 @@
+tag:
+  - ai2_arc
+task: arc_nl
+dataset_path: allenai/ai2_arc
+dataset_name: ARC-Easy
+training_split: train
+validation_split: validation
+test_split: test
+doc_to_text: !function utils.doc_to_text
+doc_to_target: !function utils.doc_to_target
+should_decontaminate: true
+doc_to_decontamination_query: "query"
+output_type: generate_until
+process_results: !function utils.process_results_gen
+generation_kwargs:
+  max_gen_toks: 4096
+  until:
+    - "</s>"
+    - "<|end_of_text|>"
+    - "<|im_end|>"
+filter_list:
+  - name: remove_whitespace
+    filter:
+      - function: remove_whitespace
+      - function: take_first
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+    ignore_case: true
+    ignore_punctuation: true
+metadata:
+  version: 1.0

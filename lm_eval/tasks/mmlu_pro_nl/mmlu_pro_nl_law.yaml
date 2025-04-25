@@ -1,0 +1,5 @@
+description: ""
+include: "_default_template_yaml"
+task: "mmlu_pro_nl_law"
+task_alias: "law"
+process_docs: !function utils.process_law

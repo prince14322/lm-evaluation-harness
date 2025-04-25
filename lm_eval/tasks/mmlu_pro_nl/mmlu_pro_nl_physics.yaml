@@ -1,0 +1,5 @@
+description: ""
+include: "_default_template_yaml"
+task: "mmlu_pro_nl_physics"
+task_alias: "physics"
+process_docs: !function utils.process_physics
