@@ -7,7 +7,8 @@ output_type: generate_until
 training_split: test
 fewshot_split: test
 test_split: test
-doc_to_text: "Question: {{question}}\nAnswer:\nGenerate pseudocode chain-of-thought reasoning first and then generate the solution."
+# doc_to_text: "Question: {{question}}\nAnswer:\nGenerate pseudocode chain-of-thought reasoning first and then generate the solution."
+doc_to_text:  "Answer the following question. Generate pseudocode chain-of-thought reasoning first and then generate the solution. Question: {{question}}\nAnswer:"
 # doc_to_target: "{{answer}}" #" {{answer.split('### ')[-1].rstrip()}}"
 doc_to_target: !function utils.doc_to_target
 output_type: generate_until
