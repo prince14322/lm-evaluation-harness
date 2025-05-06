@@ -23,10 +23,11 @@ metric_list:
       - ","                      # ignore commas
       - "\\$"                    # ignore dollar signs
       - "(?i).*####\\s*"         # ignore '####'
-      - "(?i).*answer is\\s*"
-      - "(?i).*answer:\\s*"
-      - "(?i).*answer\\s:\\s*"
+      - "(?i).*answer is\\s*"    # ignore "answer is"
+      - "(?i).*answer:\\s*"      # ignore "answer:"
+      - "(?i).*answer\\s:\\s*"   # ignore "answer :"
       - "\\.$"                   # ignore trailing period
+      - "(?i)\\s+"               # ignore extra spaces
 generation_kwargs:
   max_gen_toks: 8192
   until:

@@ -25,22 +25,27 @@ def postprocess_output_help(prediction: str):
     return llmoutput
 
 
+
 def clean_nl(text):
+    """
+    Post-processes the response, handling variations in format like 'answer:' and 'answer :'
+    """
     print("Post processing NL ....")
+    
+    # Handle the case where there is no "Response:" field
     if "Response:" not in text:
         strict_response_prediction = postprocess_output_help(text.strip())
         truncated_output = text.rsplit("\n", 1)[-1]
-        if "answer is:" in truncated_output:
-            truncated_output = truncated_output.rsplit("answer is:", 1)[-1]
-        elif "answer is :" in truncated_output:
-            truncated_output = truncated_output.rsplit("answer is :", 1)[-1]
+
+        # Handle "answer is:" and "answer is :" with or without spaces
+        truncated_output = re.sub(r"\s*answer\s*[:|is]\s*[:,]?\s*", "", truncated_output, flags=re.IGNORECASE)
+
         loose_response_prediction = postprocess_output_help(truncated_output.strip())
     else:
-        strict_response_prediction = postprocess_output_help(
-            text.split("Response:")[-1].strip()
-        )
+        # If there is a "Response:" field, clean it up
+        strict_response_prediction = postprocess_output_help(text.split("Response:")[-1].strip())
         loose_response_prediction = strict_response_prediction
-    # return strict_response_prediction, loose_response_prediction
+    
     return loose_response_prediction
 
 
@@ -51,7 +56,7 @@ def process_results_gen(doc, results):
 
     candidate = clean_nl(candidate)
 
-    candidate = candidate.strip().lower().split("\n")[0].split(" ")[0].strip()
+    # candidate = candidate.strip().lower().split("\n")[0].split(" ")[0].strip()
 
     if "." in candidate:
         candidate = candidate.split(".")[0]

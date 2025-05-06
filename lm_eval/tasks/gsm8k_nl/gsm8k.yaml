@@ -3,7 +3,6 @@ tag:
 task: gsm8k_nl
 dataset_path: gsm8k
 dataset_name: main
-output_type: generate_until
 training_split: train
 fewshot_split: train
 test_split: test
@@ -18,8 +17,17 @@ metric_list:
     higher_is_better: true
     ignore_case: true
     ignore_punctuation: true
+    regexes_to_ignore:
+      - ","                      # ignore commas
+      - "\\$"                    # ignore dollar signs
+      - "(?i).*####\\s*"         # ignore '####'
+      - "(?i).*answer is\\s*"    # ignore "answer is"
+      - "(?i).*answer:\\s*"      # ignore "answer:"
+      - "(?i).*answer\\s:\\s*"   # ignore "answer :"
+      - "\\.$"                   # ignore trailing period
+      - "(?i)\\s+"               # ignore extra spaces
 generation_kwargs:
-  max_gen_toks: 4096
+  max_gen_toks: 8192
   until:
     - "</s>"
     - "<|end_of_text|>"
@@ -38,7 +46,7 @@ filter_list:
     filter:
       - function: "regex"
         group_select: -1
-        regex_pattern: "(-?[$0-9.,]{2,})|(-?[0-9]+)"
+        regex_pattern: "(?i)(?:####|answer is|answer:|answer\\s:)\\s*([^\\s\\n\\r\\.]+)"
       - function: "take_first"
 metadata:
   version: 3.0
