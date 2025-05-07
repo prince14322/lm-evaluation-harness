@@ -1,5 +1,6 @@
 import re
 import copy
+import json
 
 def doc_to_target(doc):
     return doc["answer"]
