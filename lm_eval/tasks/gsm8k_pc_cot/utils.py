@@ -20,7 +20,7 @@ def clean_pc_cot(text):
     return text
 
 def process_results_gen(doc, results):
-    gold = doc["answer"].lower()
+    gold = doc["answer"].split("####")[-1].strip().lower()
 
     candidate = results[0]
 

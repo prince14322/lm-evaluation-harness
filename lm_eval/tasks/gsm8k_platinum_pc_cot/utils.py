@@ -20,7 +20,7 @@ def clean_pc_cot(text):
     return text
 
 def process_results_gen(doc, results):
-    gold = doc["answer"].lower()
+    gold = doc["answer"].split("####")[-1].strip().lower()
 
     candidate = results[0]
 
@@ -42,7 +42,22 @@ def process_results_gen(doc, results):
     retval = 0
     if candidate == gold:
         retval = 1
+
+    log_entry = {
+        "doc_answer" : doc["answer"],
+        "gold": gold,
+        "gen_output" : results[0],
+        "candidate": candidate,
+        "retval": retval
+    }
+
     
+    with open("gsm8k_platinum_pc_cot.log", "a") as f:
+        f.write(json.dumps(log_entry) + "\n")
+        f.flush()  # flushes the write buffer
+    
+    print("#####", log_entry)
+    sys.stdout.flush()
     results = {
         "exact_match": retval,
     }
